@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+PACKAGE_NAME=arc-icon-theme
+CURDIR=$(shell pwd)
+
+override_dh_auto_install:
+	dh_auto_install
+	@echo Preparing $(PACKAGE_NAME):
+	./autogen.sh --prefix=$(CURDIR)/debian/$(PACKAGE_NAME)/usr
+	make install
+	@echo Preparing $(PACKAGE_NAME)-faenza:
+	cp -R $(CURDIR)/debian/$(PACKAGE_NAME)/* $(CURDIR)/debian/$(PACKAGE_NAME)-faenza
+	sed -i 's/Moka/matefaenza/' $(CURDIR)/debian/$(PACKAGE_NAME)-faenza/usr/share/icons/Arc/index.theme
+

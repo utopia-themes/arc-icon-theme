@@ -1,0 +1,33 @@
+Source: arc-icon-theme
+Section: gnome
+Priority: optional
+Maintainer: James Lu <bitflip3@gmail.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.8
+Homepage: https://github.com/horst3180/arc-icon-theme
+Vcs-Git: https://github.com/GLolol/arc-icon-theme
+Vcs-Browser: https://github.com/GLolol/arc-icon-theme
+
+Package: arc-icon-theme
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: moka-icon-theme | adwaita-icon-theme | gnome-icon-theme
+Description: icon theme to match the Arc GTK+ themes
+ Arc is a flat theme with transparent elements for GTK+ 3, GTK+ 2 and GNOME
+ Shell. It supports GNOME, Unity, Budgie, Pantheon, XFCE, Mate, and others.
+ .
+ This package installs the corresponding icon theme.
+
+Package: arc-icon-theme-faenza
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: mate-icon-theme-faenza | adwaita-icon-theme | gnome-icon-theme
+Provides: arc-icon-theme
+Replaces: arc-icon-theme
+Conflicts: arc-icon-theme
+Description: icon theme to match the Arc GTK+ themes (Faenza icons)
+ Arc is a flat theme with transparent elements for GTK+ 3, GTK+ 2 and GNOME
+ Shell. It supports GNOME, Unity, Budgie, Pantheon, XFCE, Mate, and others.
+ .
+ This package installs the corresponding icon theme, extended with MATE Faenza
+ icons instead of the default Moka icons.
